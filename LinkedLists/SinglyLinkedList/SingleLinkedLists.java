@@ -47,5 +47,19 @@ public class SingleLinkedLists {
 
     }
 
-   
+    //Single linked traversal method
+    public void traverse(){
+        Node tempNode = head;//we make a new node starting at the head in order to traverse
+        if (head == null){//if head (first node) is empty
+            System.out.print("Nothing here!");//print it out to console
+        }else{
+            for (int i = 0; i < size; i++){//start of loop that traverses all nodes and prints out the values
+                System.out.print(tempNode.value);
+                if (tempNode.next != null){//if the next node is not null then print out --> and repeats loop
+                    System.out.print(" --> ");
+                }
+                tempNode = tempNode.next;//sets the temp node to the pointer
+            }
+        }
+    }
 }

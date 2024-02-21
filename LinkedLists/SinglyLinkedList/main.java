@@ -6,6 +6,10 @@ public class main {
         System.out.println(sll.head.value);
         sll.insert(6, 1);
         sll.insert(7, 2);
+        sll.insert(8, 3);
+        sll.insert(9, 4);
+        sll.traverse();
+
         System.out.println(sll.head.next.next.value);
     }
 }
