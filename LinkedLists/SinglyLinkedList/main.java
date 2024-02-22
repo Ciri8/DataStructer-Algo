@@ -10,6 +10,8 @@ public class main {
         sll.insert(9, 4);
         sll.traverse();
         sll.search(7);
+        sll.delete(3);
+        sll.traverse();
 
         // System.out.println(sll.head.next.next.value);
     }

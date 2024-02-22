@@ -63,7 +63,7 @@ public class SingleLinkedLists {
         }
     }
 
-
+        //search method for node
     boolean search(int value){
         if (head != null){//if the head is not null then proceed
             Node tempNode = head;//create tempNode starting from head
@@ -78,6 +78,38 @@ public class SingleLinkedLists {
         System.out.print("Node not found");
         return false;
     }
+
+
+    //deletion of node
+    public void delete(int location){
+        if (head == null){
+            System.out.print("Linked list not found");
+            return;
+        } if (location < 0 || location >= size){//if location is less than 0 or greater than the size of the linked list then:
+            System.out.print("Invalid node location");//its invalid
+        } if (location == 0){//if location is the first index (head)
+            head = head.next;//head will become the next node since your deleting the current head.
+            if (size == 1){//if the linked list has 1 node 
+                tail = null;//tail will be set to null which will delete the only node inside of it making it null.
+            }
+        }else{
+            Node tempNode = head;
+            for (int i = 0; i < location - 1; i++){//starting from 0 index until one position before the node to be deleted
+                tempNode = tempNode.next;//tempNode becomes the pointer to the next node
+            }
+            tempNode.next = tempNode.next.next;//changes the next reference of the node just before the target node to point to the node after the target node. 
+            if (location == size - 1){//if location is equal to the last node
+                tail = tempNode;//if it is tail becomes the tempnode
+            }
+        }
+        size--;//decrement size
+        if (size == 0){//checks if size is 0
+            head = null;
+            tail = null;
+        }
+    }
+        
+  
 
 
 }
