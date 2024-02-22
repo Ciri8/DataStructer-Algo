@@ -62,4 +62,22 @@ public class SingleLinkedLists {
             }
         }
     }
+
+
+    boolean search(int value){
+        if (head != null){//if the head is not null then proceed
+            Node tempNode = head;//create tempNode starting from head
+            for (int i = 0; i < size; i++){//looping through the linkedlist
+                if (tempNode.value == value){//if the tempnodes value is equal to the value
+                    System.out.print(" \nFound Node at: " + i + "\n");//printing out the index at where its found
+                    return true;
+                }
+                tempNode = tempNode.next;//go to next node.
+            }
+        }
+        System.out.print("Node not found");
+        return false;
+    }
+
+
 }
