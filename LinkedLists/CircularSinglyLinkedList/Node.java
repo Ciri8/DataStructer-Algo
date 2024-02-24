@@ -1,4 +1,5 @@
-package CircularSinglyLinkedList.csl;
+package LinkedLists.CircularSinglyLinkedList;
+
 public class Node{
     public Node next;
     public int val;

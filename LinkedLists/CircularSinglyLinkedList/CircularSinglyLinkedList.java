@@ -1,15 +1,17 @@
-package CircularSinglyLinkedList.csl;
+package LinkedLists.CircularSinglyLinkedList;
 
-public class CircularLinkedList{
+
+public class CircularSinglyLinkedList{
     public Node head; 
     public Node tail;
     public int size;
 
-    public CircularLinkedList(){
+    public CircularSinglyLinkedList(){
         this.head = null;
         this.tail = null;
         this.size = 0;
     }
+    
 
     public Node csl(int value){
         Node newNode = new Node(value);
