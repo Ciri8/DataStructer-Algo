@@ -77,5 +77,43 @@ public class CircularSinglyLinkedList{
         }return false;
     }
 
+    public void deleteNode(int location) {
+        if (head == null) {
+            System.out.println("The list is empty, nothing to delete.");
+            return;
+        }
+    
+        if (location == 0) { // Delete the first node
+            if (size == 1) { // If there's only one element in the list
+                head = tail = null;
+                size = 0;
+                return;
+            }
+            head = head.next;
+            tail.next = head;
+            size--;
+        } else if (location >= size - 1) { // Delete the last node or any out-of-bounds location treated as last
+            if (size == 1) { // If there's only one element, it's the same as deleting the first node
+                head = tail = null;
+                size = 0;
+                return;
+            }
+            Node tempNode = head;
+            for (int i = 0; i < size - 2; i++) { // Move to the second last node
+                tempNode = tempNode.next;
+            }
+            tempNode.next = head;
+            tail = tempNode;
+            size--;
+        } else { // Delete a node from the middle
+            Node tempNode = head;
+            for (int i = 0; i < location - 1; i++) { // Move to the node before the one to be deleted
+                tempNode = tempNode.next;
+            }
+            tempNode.next = tempNode.next.next; // Skip the node to be deleted
+            size--;
+        }
+    }
+
 
 }
