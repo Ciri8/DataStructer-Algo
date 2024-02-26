@@ -66,6 +66,21 @@ public class DoublyLinkedList{
       }
    }
   }
+   //reverse traversal
+  public void reversetraversal(){
+   if (head == null){
+      System.out.print("Nothing in the last node!");
+   }else{
+      Node tempNode = tail;
+      for (int i = 0; i < size; i++){
+         System.out.print(tempNode.val);
+         if (tempNode.prev != null){
+            System.out.print(" <== ");
+         }
+         tempNode = tempNode.prev;
+      }
+   }
+  }
 
 
 
