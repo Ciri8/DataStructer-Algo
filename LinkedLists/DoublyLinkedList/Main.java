@@ -10,6 +10,8 @@ public class Main {
         dll.insert(30, 2);
         dll.insert(40, 3);
         dll.traverse();
+        dll.reversetraversal();
+        dll.search(40);
 
 
     }

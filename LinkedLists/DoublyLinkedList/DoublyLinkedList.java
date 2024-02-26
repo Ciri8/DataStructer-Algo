@@ -64,6 +64,7 @@ public class DoublyLinkedList{
          }
          tempNode = tempNode.next;
       }
+      System.out.println();
    }
   }
    //reverse traversal
@@ -79,9 +80,59 @@ public class DoublyLinkedList{
          }
          tempNode = tempNode.prev;
       }
+      System.out.println();
    }
   }
 
+
+  boolean search(int val){
+   if (head == null){
+      System.out.print("Nothing here!");
+      return false;
+   }else{
+      Node tempNode = head;
+      for (int i = 0; i < size; i++){
+         if (tempNode.val == val){
+            System.out.print("Value found at: " + i);
+            return true;
+         }
+         tempNode = tempNode.next;
+      }
+      System.out.println();
+   } return false;
+  }
+
+  public void deletion(int location){
+   if (head == null){
+      System.out.print("Your good nothing to delete!");
+      return;
+   }else if (location == 0){
+      if(size == 1){
+         head = null;
+         tail = null;
+         size--;
+         return;
+      }else{
+         head = head.next;
+         head.prev = null;
+      }
+   }else if (location >= size - 1) { // Deleting the last node or out-of-bounds treated as last
+      if (size == 1) { // If there's only one node
+          head = tail = null;
+      } else {
+          tail = tail.prev;
+          tail.next = null;
+      }
+      }else{
+      Node tempNode = head;
+      for (int i = 0; i < location - 1; i++){
+         tempNode = tempNode.next;
+      }
+      tempNode.next = tempNode.next.next;
+      tempNode.next.prev = tempNode;
+   }
+   size--;
+}
 
 
 }
