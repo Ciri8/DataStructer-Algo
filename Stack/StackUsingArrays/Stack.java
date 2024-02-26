@@ -28,7 +28,7 @@ public boolean isFull(){
         return false;
     }
 }
-
+//push method
 public void push(int val){
     if (isFull()){
         System.out.print("Your stack cannot add more elements");
@@ -38,5 +38,29 @@ public void push(int val){
         System.out.println("Value has been inserted");
     }
 }
+
+//pop method
+public int pop(){
+    if (isEmpty()){
+        System.out.print("Stack is empty");
+        return -1;
+    }else{
+        int poppedval = arr[top];//save top index of the array into poppedval variable
+        top--;//decrement cuz your deleting an element
+        return poppedval;//return value that was poped
+    }
+}
+
+//peak method
+public int peek(){
+    if (isEmpty()){
+        System.out.println("Your stack is empty");
+        return -1;
+    }else{
+        return arr[top]; 
+    }
+}
+
+
 
 }
