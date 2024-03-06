@@ -2,21 +2,21 @@ package BinaryTrees;
 
 public class Main {
    public static void main(String[] args) {
-    BinartyTreeLL bintree = new BinartyTreeLL();
-    BinaryNode n1 = new BinaryNode();
-    n1.value = "N1";
-    BinaryNode n2 = new BinaryNode();
-    n2.value = "N2";
-    BinaryNode n3 = new BinaryNode();
-    n3.value = "N3";
-    BinaryNode n4 = new BinaryNode();
-    n4.value = "N4";
-    BinaryNode n5 = new BinaryNode();
-    n5.value = "N5";
-    BinaryNode n6 = new BinaryNode();
-    n6.value = "N6";
-    BinaryNode n7 = new BinaryNode();
-    n7.value = "N7";
+   BinaryTreeLL bintree = new BinaryTreeLL();
+   BinaryNode n1 = new BinaryNode();
+   n1.value = "N1";
+   BinaryNode n2 = new BinaryNode();
+   n2.value = "N2";
+   BinaryNode n3 = new BinaryNode();
+   n3.value = "N3";
+   BinaryNode n4 = new BinaryNode();
+   n4.value = "N4";
+   BinaryNode n5 = new BinaryNode();
+   n5.value = "N5";
+   BinaryNode n6 = new BinaryNode();
+   n6.value = "N6";
+   BinaryNode n7 = new BinaryNode();
+   n7.value = "N7";
     BinaryNode n8 = new BinaryNode();
     n8.value = "N8";
     BinaryNode n9 = new BinaryNode();
@@ -32,7 +32,7 @@ public class Main {
     n4.right = n9;
     bintree.root = n1;
 
-    bintree.preOrder(bintree.root);
+    bintree.postOrder(bintree.root);
     
    }
 }
