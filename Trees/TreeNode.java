@@ -6,6 +6,7 @@ public class TreeNode {
     public TreeNode(String data){
         this.data = data;
         this.children = new ArrayList<TreeNode>();
+
     }
 
     public void addChild(TreeNode node){
@@ -16,7 +17,7 @@ public class TreeNode {
         String ret;
         ret = "  ".repeat(level) + data + "\n";
         for (TreeNode node : this.children){
-            ret += node.print(level + 1);
+             ret += node.print(level + 1);
         } 
         return ret;
     }
