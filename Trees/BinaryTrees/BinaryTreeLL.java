@@ -1,5 +1,6 @@
 package BinaryTrees;
-
+import java.util.LinkedList;
+import java.util.Queue;
 public class BinaryTreeLL {
     BinaryNode root;
 
@@ -38,5 +39,21 @@ public class BinaryTreeLL {
         postOrder(node.right);
         System.out.print(node.value + " ");//then we want to visit the root node and you do that by printing out the node.value of the child
 
+    }
+
+    //level order
+    void levelOrder(){
+        Queue<BinaryNode> queue = new LinkedList<BinaryNode>();//create a queue using linked list of Binary node
+        queue.add(root);//add root to the first queue
+        while (!queue.isEmpty()){//while queue is not empty enter loop
+            BinaryNode current = queue.remove();//set Binary node current to call queue.remove method
+            System.out.print(current.value + " ");//print out first node value
+            if (current.left != null){//if the node has anychildren (if current.left is not null) then add them to queue
+                queue.add(current.left);
+            }
+            if (current.right != null){
+                queue.add(current.right);
+            }
+        }
     }
 }
