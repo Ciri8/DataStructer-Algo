@@ -56,4 +56,25 @@ public class BinaryTreeLL {
             }
         }
     }
+
+    void search(String value){
+        Queue<BinaryNode> queue = new LinkedList<BinaryNode>();//we are using level traversal to search for value
+        queue.add(root);
+        while(!queue.isEmpty()){
+            BinaryNode current = queue.remove();
+            if (current.value == value){//if the current node is the value then print and end loop
+                System.out.print("The value is found in tree: " + value);
+                return;
+            }else{//checking for children too
+                if(current.left != null){
+                    queue.add(current.left);
+                }if(current.right != null){
+                    queue.add(current.right);
+                }
+            }
+        }
+        System.out.print("Value is not found");
+    }
+
+    
 }

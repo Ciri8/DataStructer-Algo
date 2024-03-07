@@ -32,7 +32,7 @@ public class Main {
     n4.right = n9;
     bintree.root = n1;
 
-    bintree.postOrder(bintree.root);
+    bintree.search("N5");
     
    }
 }
